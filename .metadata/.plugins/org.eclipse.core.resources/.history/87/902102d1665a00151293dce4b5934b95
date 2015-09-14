@@ -1,0 +1,107 @@
+package cs475;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collectors;
+
+public class PredictMajority implements Predictor {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1296705870678586595L;
+
+	public void train(List<Instance> instances) {
+		// TODO train PredictMajority
+		if(instances.isEmpty())
+		{
+			majorityLabel = new Label<Number>(0);
+			return;
+		}
+		
+		HashMap<Label<Number>,Integer> countMap = new HashMap<Label<Number>,Integer>();
+					// count the number of times each label occurs
+		for(Instance i: instances)
+		{
+			Label<Number> label = i.getLabel();
+			if (countMap.containsKey(label)) 
+			{
+				countMap.put(label,	countMap.get(label)+1);
+			} 
+			else
+			{
+				countMap.put(label, 1);
+			}
+		}
+		
+		Set<Entry<Label<Number>, Integer>> entries = countMap.entrySet();
+		System.out.println(entries);
+		
+		Comparator<Entry<Label<Number>,Integer>> byValue = (entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue());
+		
+	    Optional<Entry<Label<Number>,Integer>> most = countMap
+	            .entrySet()
+	            .stream()
+	            .sorted(byValue.reversed())
+	            .findFirst();
+
+	    if(countMap.size() > 1)
+	    {
+			// account for when the first entry and the second entry have equal counts
+
+		    // TODO sorting twice at the moment...
+		    Optional<Entry<Label<Number>,Integer>> secondMostVal = countMap
+		            .entrySet()
+		            .stream()
+		            .sorted(byValue.reversed())
+		            .skip(1) // skip the first value to get the second
+		            .findFirst();
+		    
+		    try
+		    {
+		    	if(most.get().getValue() == secondMostVal.get().getValue())
+		    	{
+		    		// assignment says if the top two labels are equal, return 1
+		    		majorityLabel = new Label<Number>(1);
+		    	}
+		    }
+	    	catch (NoSuchElementException e) 
+	    	{
+				System.out.println("PredictMajority: NoSuchElementException encountered");
+	    		majorityLabel = new Label<Number>(0);
+			}
+	    	
+	    }
+	    else
+	    {
+	    	try
+	    	{
+	    		majorityLabel = most.get().getKey();
+			} 
+	    	catch (NoSuchElementException e) 
+	    	{
+				System.out.println("PredictMajority: NoSuchElementException encountered");
+				majorityLabel = new Label<Number>(0);
+			}
+	    }
+	    
+		System.out.println("majorityLabel: " + majorityLabel + "\n");
+	        
+	}
+
+	public Label<Number> predict(Instance instance) {
+		// TODO predict PredictMajority
+		return majorityLabel;
+	}
+
+	Label<Number> majorityLabel;
+	
+}

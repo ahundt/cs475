@@ -1,0 +1,8 @@
+package cs475;
+
+import java.io.Serializable;
+
+public interface Label extends Serializable {
+
+	public abstract String toString();
+}

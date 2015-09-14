@@ -1,0 +1,85 @@
+package cs475;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+
+import org.junit.Test;
+
+public class ClassifyTest {
+
+    @Test
+    public void trainAndTestBio() throws IOException {
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "majority", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/bio/bio.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/bio/bio.dev", "-predictions_file", " bioPredictionsEvenOdd"});
+}
+    @Test
+    public void trainAndTestFinance() throws IOException {
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "majority", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/finance/finance.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/finance/finance.dev", "-predictions_file", " financePredictionsEvenOdd"});
+}
+    @Test
+    public void trainAndTestSpeech() throws IOException {
+// echo "**speech data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "majority", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/speech/speech.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/speech/speech.dev", "-predictions_file", " speechPredictionsEvenOdd"});
+}
+    @Test
+    public void trainAndTestSyntheticEasy() throws IOException {
+// echo "**synthetic easy data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "majority", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/easy.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/easy.dev", "-predictions_file", " syntheticEasyEvenOdd"});
+}
+    @Test
+    public void trainAndTestSyntheticHard() throws IOException {
+// echo "**synthetic hard data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "majority", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/hard.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/hard.dev", "-predictions_file", " syntheticHardEvenOdd"});
+}
+    @Test
+    public void trainAndTestVision() throws IOException {
+// echo "**vision data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "majority", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/vision/vision.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/vision/vision.dev", "-predictions_file", " visionEvenOdd"});
+
+
+
+}
+    @Test
+    public void trainAndTestBioEvenOdd() throws IOException {
+// echo "using even"-odd model"
+// echo "**bio data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "even_odd", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/bio/bio.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/bio/bio.dev", "-predictions_file", " bioPredictionsEvenOdd"});
+}
+    @Test
+    public void trainAndTestFinanceEvenOdd() throws IOException {
+// echo "**finance data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "even_odd", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/finance/finance.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/finance/finance.dev", "-predictions_file", " financePredictionsEvenOdd"});
+}
+    @Test
+    public void trainAndTestSpeechEvenOdd() throws IOException {
+// echo "**speech data**"
+Classify.main(new String[] {            "-mode", "train", "-algorithm", "even_odd", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/speech/speech.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/speech/speech.dev", "-predictions_file", " speechPredictionsEvenOdd"});
+}
+    @Test
+    public void trainAndTestSyntheticEasyEvenOdd() throws IOException {
+// echo "**synthetic easy data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "even_odd", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/easy.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/easy.dev", "-predictions_file", " syntheticEasyEvenOdd"});
+}
+    @Test
+    public void trainAndTestSyntheticHardEvenOdd() throws IOException {
+// echo "**synthetic hard data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "even_odd", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/hard.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/synthetic/hard.dev", "-predictions_file", " syntheticHardEvenOdd"});
+}
+    @Test
+    public void trainAndTestVisionEvenOdd() throws IOException {
+// echo "**vision data**"
+Classify.main(new String[] {        "-mode", "train", "-algorithm", "even_odd", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/vision/vision.train"});
+Classify.main(new String[] {        "-mode", "test", "-algorithm", "outputModelEvenOdd", "-data", "./Homework 1 DataHomework1Data/vision/vision.dev", "-predictions_file", " visionEvenOdd"});
+}
+}

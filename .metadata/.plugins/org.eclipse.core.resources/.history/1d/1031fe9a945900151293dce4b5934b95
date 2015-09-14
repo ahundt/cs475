@@ -1,0 +1,23 @@
+package cs475;
+
+import java.io.Serializable;
+
+//public class RegressionLabel extends Label implements Serializable {
+//
+//	/**
+//	 * 
+//	 */
+//	private static final long serialVersionUID = -8964243417132601398L;
+//
+//	public RegressionLabel(double label) {
+//		// TODO Auto-generated constructor stub
+//		ArrayList
+//	}
+//
+//	@Override
+//	public String toString() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//}

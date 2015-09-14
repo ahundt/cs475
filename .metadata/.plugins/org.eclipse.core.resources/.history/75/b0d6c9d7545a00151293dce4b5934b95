@@ -1,0 +1,28 @@
+package cs475;
+
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+
+public class PredictEvenOdd implements Predictor {
+
+	public void train(List<Instance> instances) {
+		for(Instance i : instances)
+		{
+			FeatureVector<Integer,Double> fv = i.getFeatureVector();
+			Set<Map.Entry<Integer,Double>> entrySet = fv.entrySet();
+			for(entry : entrySet)
+			{
+				
+			}
+		}
+		// TODO Auto-generated method stub
+
+	}
+
+	public Label<Number> predict(Instance instance) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

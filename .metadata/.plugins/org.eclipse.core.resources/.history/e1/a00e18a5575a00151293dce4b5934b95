@@ -1,0 +1,23 @@
+package cs475;
+
+import java.io.Serializable;
+
+public class Label<V> implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4164933580999480614L;
+	
+	private V value;
+	
+	Label(V value)
+	{
+		this.value = value;
+	}
+	
+	@Override
+	public String toString() {
+		return "Label [value=" + value + "]";
+	}
+}

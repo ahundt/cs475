@@ -1,0 +1,22 @@
+package cs475;
+
+import java.io.Serializable;
+
+//public class ClassificationLabel extends Label implements Serializable {
+//
+//	/**
+//	 * 
+//	 */
+//	private static final long serialVersionUID = -2171435568536483676L;
+//
+//	public ClassificationLabel(int label) {
+//		// TODO ClassificationLabel constructor stub
+//	}
+//
+//	@Override
+//	public String toString() {
+//		// TODO ClassificationLabel toString method stub
+//		return null;
+//	}
+//
+//}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ClassifyTest" project="cs475" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="cs475.ClassifyTest" time="1.065">
+    <testcase name="trainAndTestFinanceEvenOdd" classname="cs475.ClassifyTest" time="0.0"/>
+    <testcase name="trainAndTestBioEvenOdd" classname="cs475.ClassifyTest" time="0.079"/>
+    <testcase name="trainAndTestVisionMajority" classname="cs475.ClassifyTest" time="0.06"/>
+    <testcase name="trainAndTestSyntheticEasyEvenOdd" classname="cs475.ClassifyTest" time="0.006"/>
+    <testcase name="trainAndTestSyntheticHardMajority" classname="cs475.ClassifyTest" time="0.139"/>
+    <testcase name="trainAndTestSyntheticEasyMajority" classname="cs475.ClassifyTest" time="0.011"/>
+    <testcase name="trainAndTestSpeechMajority" classname="cs475.ClassifyTest" time="0.273"/>
+    <testcase name="trainAndTestFinanceMajority" classname="cs475.ClassifyTest" time="0.012"/>
+    <testcase name="trainAndTestVisionEvenOdd" classname="cs475.ClassifyTest" time="0.018"/>
+    <testcase name="trainAndTestSpeechEvenOdd" classname="cs475.ClassifyTest" time="0.291"/>
+    <testcase name="trainAndTestSyntheticHardEvenOdd" classname="cs475.ClassifyTest" time="0.115"/>
+    <testcase name="trainAndTestBioMajority" classname="cs475.ClassifyTest" time="0.061"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,50 @@
+package cs475;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collectors;
+
+public class PredictMajority implements Predictor {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1296705870678586595L;
+
+	public void train(List<Instance> instances) {
+		// TODO train PredictMajority
+					// count the number of times each label occurs
+		
+		Optional<Entry<Label<Number>, Integer>> E =
+	        		instances.parallelStream().collect
+	        		(
+	        			Collectors.toConcurrentMap(i->i.getLabel(), i->new Integer(1),Integer::sum)
+	        		)
+	        		// sort all the entries in reverse order by value (the count)
+	        		.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+	        		//
+	        		.findFirst()
+	        		;
+
+		try {
+			majorityLabel = E.get().getKey();
+		} catch (NoSuchElementException e) {
+			majorityLabel = new Label<Number>(0);
+		}
+	        
+	        
+	}
+
+	public Label<Number> predict(Instance instance) {
+		// TODO predict PredictMajority
+		return majorityLabel;
+	}
+
+	Label<Number> majorityLabel;
+	
+}

@@ -1,0 +1,9 @@
+package cs475;
+
+import java.io.Serializable;
+
+public class Label<V> implements Serializable {
+
+	private V value;
+	public abstract String toString();
+}

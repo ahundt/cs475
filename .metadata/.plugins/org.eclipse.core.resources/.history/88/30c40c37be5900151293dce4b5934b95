@@ -1,0 +1,29 @@
+package cs475;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class PredictMajority implements Predictor {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1296705870678586595L;
+
+	public void train(List<Instance> instances) {
+		// TODO Auto-generated method stub
+	        Map<Label<Number>, Integer> counts = instances.parallelStream().
+	            collect(Collectors.toConcurrentMap(
+	            		v->v.getLabel(), v -> Integer(1), Integer::sum));
+
+	}
+
+	public Label<Number> predict(Instance instance) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}

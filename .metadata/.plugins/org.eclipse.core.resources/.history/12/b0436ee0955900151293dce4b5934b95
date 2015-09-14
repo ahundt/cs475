@@ -1,0 +1,24 @@
+package cs475;
+
+import java.util.List;
+
+public class MajorityPredictor extends Predictor {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1259200894086713796L;
+
+	@Override
+	public void train(List<Instance> instances) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Label<Number> predict(Instance instance) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

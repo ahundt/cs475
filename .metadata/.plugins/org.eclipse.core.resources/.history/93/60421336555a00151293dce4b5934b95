@@ -1,0 +1,35 @@
+package cs475;
+
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+
+public class PredictEvenOdd implements Predictor {
+
+	public void train(List<Instance> instances) {
+		for(Instance i : instances)
+		{
+			Set<Map.Entry<Integer,Double>> entrySet = i.getFeatureVector().entrySet();
+			for(Map.Entry<Integer,Double> entry : entrySet)
+			{
+				if (entry.getKey() % 2 == 0)
+				{
+					even_sum++;
+				}
+				else
+				{
+					odd_sum++;
+				}
+			}
+		}
+
+	}
+
+	public Label<Number> predict(Instance instance) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	int even_sum;
+	int odd_sum;
+}
